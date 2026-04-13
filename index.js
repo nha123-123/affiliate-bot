@@ -19,10 +19,9 @@ const makeAffiliateLink = (originalUrl) => {
 const scrapeDeals = async () => {
     console.log('--- Đang khởi động Chrome tàng hình ---');
     
-    // 👇 ĐÃ SỬA CẤU HÌNH PUPPETEER ĐỂ CHẠY ĐƯỢC TRÊN DOCKER/RENDER 👇
+    // 👇 ĐÃ SỬA LẠI: ĐỂ BOT TỰ TÌM CHROME VÀ DÙNG HEADLESS CHUẨN MỚI 👇
     const browser = await puppeteer.launch({ 
-        headless: "new",
-        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || null,
+        headless: true,
         args: [
             '--no-sandbox', 
             '--disable-setuid-sandbox', 
